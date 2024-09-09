@@ -15,96 +15,98 @@ class Maindashboard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.all(16),
-          child: Column(
-            children: [
-              Row(
-                children: [
-                  Row(
-                    //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        children: [
-                          CircleAvatar(
-                            backgroundImage:
-                                AssetImage(R.ASSETS_IMAGES_USER1_PNG),
-                          ),
-                          SizedBox(width: 8),
-                          Column(
-                            children: [
-                              Text('Balance',
-                                  style: appStyle(
-                                      18,
-                                      Kolors.kDark.withOpacity(.5),
-                                      FontWeight.w500)),
-                              Text('\$50,000',
-                                  style: TextStyle(
-                                      fontSize: 24,
-                                      fontWeight: FontWeight.bold)),
-                            ],
-                          ),
-                          SizedBox(
-                            width: 150,
-                          ),
-                          CircleAvatar(
-                            backgroundColor: Colors.blue,
-                            child: IconButton(
-                              icon: Icon(Icons.add, color: Colors.white),
-                              onPressed: () {
-                                // Add functionality here
-                                print('Add button pressed');
-                              },
-                            ),
-                          )
-                        ],
-                      )
-                    ],
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 16,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  TabButton(text: 'This Week', isActive: true),
-                  TabButton(text: 'This Month', isActive: false),
-                  TabButton(text: 'This Year', isActive: false),
-                ],
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Expanded(
-                      child: FinanceInfo(title: 'Income', amount: '\$ 45,520', backgroundColor: Colors.green[100]!, textColor: Colors.green)),
-                  SizedBox(width: 16),
-                  Expanded(
-                      child: FinanceInfo(title: 'Expense', amount: '\$ 44,540', backgroundColor: Colors.red[100]!, textColor: Colors.red)),
-                ],
-              ),
-              SizedBox(height: 16),
-              ElevatedButton(
-                style: ButtonStyle(),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.all(16),
+            child: Column(
+              children: [
+                Row(
                   children: [
-                    Text('View report'),
-                    SizedBox(width: 20),
-                    Icon(Icons.arrow_forward),
+                    Row(
+                      //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            CircleAvatar(
+                              backgroundImage:
+                                  AssetImage(R.ASSETS_IMAGES_USER1_PNG),
+                            ),
+                            SizedBox(width: 8),
+                            Column(
+                              children: [
+                                Text('Balance',
+                                    style: appStyle(
+                                        18,
+                                        Kolors.kDark.withOpacity(.5),
+                                        FontWeight.w500)),
+                                Text('\$50,000',
+                                    style: TextStyle(
+                                        fontSize: 24,
+                                        fontWeight: FontWeight.bold)),
+                              ],
+                            ),
+                            SizedBox(
+                              width: 150,
+                            ),
+                            CircleAvatar(
+                              backgroundColor: Colors.blue,
+                              child: IconButton(
+                                icon: Icon(Icons.add, color: Colors.white),
+                                onPressed: () {
+                                  // Add functionality here
+                                  print('Add button pressed');
+                                },
+                              ),
+                            )
+                          ],
+                        )
+                      ],
+                    ),
                   ],
                 ),
-                onPressed: () => context.go('/reportwidget'),
-              ),
-              SizedBox(height: 10),
-              _buildMonthlyBudget(),
-              SizedBox(height: 10),
-              TransactionList()
-            ],
+                SizedBox(
+                  height: 16,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    TabButton(text: 'This Week', isActive: true),
+                    TabButton(text: 'This Month', isActive: false),
+                    TabButton(text: 'This Year', isActive: false),
+                  ],
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Expanded(
+                        child: FinanceInfo(title: 'Income', amount: '\$ 45,520', backgroundColor: Colors.green[100]!, textColor: Colors.green)),
+                    SizedBox(width: 16),
+                    Expanded(
+                        child: FinanceInfo(title: 'Expense', amount: '\$ 44,540', backgroundColor: Colors.red[100]!, textColor: Colors.red)),
+                  ],
+                ),
+                SizedBox(height: 16),
+                ElevatedButton(
+                  style: ButtonStyle(),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text('View report'),
+                      SizedBox(width: 20),
+                      Icon(Icons.arrow_forward),
+                    ],
+                  ),
+                  onPressed: () => context.go('/reportwidget'),
+                ),
+                SizedBox(height: 10),
+                _buildMonthlyBudget(),
+                SizedBox(height: 10),
+                TransactionList()
+              ],
+            ),
           ),
         ),
       ),

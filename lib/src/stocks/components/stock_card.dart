@@ -1,9 +1,11 @@
+import 'package:finany/common/utils/app_routes.dart';
 import 'package:finany/common/utils/kcolors.dart';
 import 'package:finany/common/widgets/app_style.dart';
 import 'package:finany/const/resource.dart';
 import 'package:finany/src/home/components/actions_buttons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 class StockCard extends StatelessWidget {
   const StockCard({super.key});
@@ -11,7 +13,6 @@ class StockCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-       
       margin: EdgeInsets.only(
         left: 16,
         top: 16,
@@ -61,16 +62,17 @@ class StockCard extends StatelessWidget {
             SizedBox(
               height: 30,
             ),
-            
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                _buildActionButton(
-                    Icons.add, 'Add money', Colors.blue[50]!, Colors.blue),
+                _buildActionButton(Icons.add, 'Add money', Colors.blue[50]!,
+                    Colors.blue, () {}),
                 _buildActionButton(Icons.show_chart, 'Invest',
-                    Colors.orange[50]!, Colors.orange),
-                _buildActionButton(
-                    Icons.grid_view, 'More', Colors.green[50]!, Colors.green),
+                    Colors.orange[50]!, Colors.orange, () {
+                  context.go('/stockinvest');
+                }),
+                _buildActionButton(Icons.grid_view, 'More', Colors.green[50]!,
+                    Colors.green, () {}),
               ],
             )
           ],
@@ -79,10 +81,10 @@ class StockCard extends StatelessWidget {
     );
   }
 
-  Widget _buildActionButton(
-      IconData icon, String label, Color bgColor, Color iconColor) {
+  Widget _buildActionButton(IconData icon, String label, Color bgColor,
+      Color iconColor, VoidCallback onPressed) {
     return ElevatedButton(
-      onPressed: () {}, // You need to add a callback function here
+      onPressed: onPressed, // You need to add a callback function here
       style: ButtonStyle(
         backgroundColor: WidgetStateProperty.all(bgColor),
         shape: WidgetStateProperty.all(

@@ -92,7 +92,7 @@ class InvestementList extends StatelessWidget {
     return Column(
       children: [
         _buildAvailableItem('AirBnB', 'BNB • Travel', 2451.65, 1.10, false),
-        _buildAvailableItem('Amazon', 'AM • Ecommerce', 363.50, 2.59, true),
+        _buildAvailableItem('Amazon', 'AMZ • Ecommerce', 363.50, 2.59, true),
         _buildAvailableItem('Uber', 'UB • Transport', 47.51, 4.39, true),
       ],
     );

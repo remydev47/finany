@@ -51,7 +51,7 @@ dependencies:
   flutter_svg: ^2.0.10+1
   flutter_card_swiper: ^6.0.0
   iconly: ^1.0.1
-  tint_svg: ^2.0.0
+
   fl_chart: ^0.69.0
 
 dev_dependencies:

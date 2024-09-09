@@ -8,7 +8,9 @@ class Reportspage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Maindashboard(),
+      body: SafeArea(
+        child: Maindashboard(),
+      ),
     );
   }
 }

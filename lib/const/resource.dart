@@ -87,9 +87,14 @@ class R {
   static const String ASSETS_AM_PNG = 'assets/icons/amazon.svg';  
   static const String ASSETS_BW_PNG = 'assets/icons/bmw.svg';
   static const String ASSETS_GG_PNG = 'assets/icons/google.svg';
-   static const String ASSETS_IMAGES_BENTO4_PNG = 'assets/images/testkit3.jpg';
-   static const String ASSETS_IMAGES_VISA_PNG = 'assets/images/visa.png';
-  
+  static const String ASSETS_IMAGES_BENTO4_PNG = 'assets/images/testkit3.jpg';
+  static const String ASSETS_IMAGES_VISA_PNG = 'assets/images/visa.png';
+  static const String ASSETS_NF_PNG = 'assets/icons/nf.svg';
+  static const String ASSETS_MC_PNG = 'assets/icons/mo.svg';
+  static const String ASSETS_NV_PNG = 'assets/icons/nd.svg';
+  static const String ASSETS_TE_PNG = 'assets/icons/tm.svg';
+  static const String ASSETS_SX_PNG = 'assets/icons/sx.svg';
+
   static const String ASSETS_IMAGES_P1_PNG = 'assets/images/card1bbg.jpg';
   static const String ASSETS_IMAGES_P11_PNG = 'assets/images/card1bg.jpg';
   static const String ASSETS_IMAGES_P2_PNG = 'assets/images/card2bg.jpg';

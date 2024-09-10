@@ -1,4 +1,5 @@
 import 'package:finany/common/utils/kcolors.dart';
+import 'package:finany/const/resource.dart';
 import 'package:flutter/material.dart';
 
 class ContactButtons extends StatelessWidget {
@@ -9,7 +10,7 @@ class ContactButtons extends StatelessWidget {
     return Container(
       height: 90,
       decoration: BoxDecoration(
-         boxShadow: [
+        boxShadow: [
           BoxShadow(
             color: Kolors.kWhite.withOpacity(0.1),
             blurRadius: 4,
@@ -22,23 +23,23 @@ class ContactButtons extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 16),
         child: Row(
           children: [
-            ContactButton(imageUrl: 'assets/search_icon.png', label: 'Search'),
-            ContactButton(imageUrl: 'assets/anne.jpg', label: 'Anne'),
-            ContactButton(imageUrl: 'assets/kate.jpg', label: 'Kate'),
-            ContactButton(imageUrl: 'assets/edward.jpg', label: 'Edward'),
-            ContactButton(imageUrl: 'assets/phillip.jpg', label: 'Phillip'),
-            ContactButton(imageUrl: 'assets/emma.jpg', label: 'Emma'),
+            ContactButton(imageAsset: R.ASSETS_USER2_PNG, label: 'Anne'),
+            ContactButton(imageAsset: R.ASSETS_USER3_PNG, label: 'Kate'),
+            ContactButton(imageAsset: R.ASSETS_USER4_PNG, label: 'Edward'),
+            ContactButton(imageAsset: R.ASSETS_USER5_PNG, label: 'Phillip'),
+            ContactButton(imageAsset: R.ASSETS_USER6_PNG, label: 'Emma'),
           ],
         ),
       ),
     );
   }
 }
+
 class ContactButton extends StatelessWidget {
-  final String imageUrl;
+  final String imageAsset;
   final String label;
 
-  ContactButton({required this.imageUrl, required this.label});
+  ContactButton({required this.imageAsset, required this.label});
 
   @override
   Widget build(BuildContext context) {
@@ -49,16 +50,8 @@ class ContactButton extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           CircleAvatar(
-            radius: 25,
-            backgroundColor: Colors.grey[200],
-            child: ClipOval(
-              child: Image.asset(
-                imageUrl,
-                width: 50,
-                height: 50,
-                fit: BoxFit.cover,
-              ),
-            ),
+            backgroundImage: AssetImage(imageAsset),
+            radius: 30, // adjust the radius to your liking
           ),
           SizedBox(height: 4),
           Text(

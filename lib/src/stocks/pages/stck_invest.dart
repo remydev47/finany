@@ -53,7 +53,7 @@ class StockInvest extends StatelessWidget {
                   price: 358.07,
                   change: 3.04,
                   svgColor: Kolors.kDark,
-                  stockDetailsRoute: '/apple-details',
+                  
                 ),
                 SizedBox(
                   width: 10,
@@ -65,7 +65,7 @@ class StockInvest extends StatelessWidget {
                   price: 358.07,
                   change: -1.04,
                   svgColor: Kolors.kGold,
-                  stockDetailsRoute: '/amazon-details',
+                
                 ),
                 SizedBox(
                   width: 10,
@@ -77,7 +77,7 @@ class StockInvest extends StatelessWidget {
                   price: 358.07,
                   change: 3.04,
                   svgColor: Kolors.kGreen,
-                  stockDetailsRoute: '/spotify-details',
+                 
                 ),
               ],
             ),
@@ -139,7 +139,7 @@ class Stockcard extends StatelessWidget {
   final double price;
   final double change;
   final Color svgColor;
-  final String stockDetailsRoute;
+ // final String stockDetailsRoute;
   const Stockcard({
     Key? key,
     required this.symbol,
@@ -148,12 +148,12 @@ class Stockcard extends StatelessWidget {
     required this.change,
     required this.image,
     required this.svgColor,
-    required this.stockDetailsRoute,
+   // required this.stockDetailsRoute,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () => context.go('/stock/$symbol'),
+    return InkWell(
+      onTap: () => _navigateToStockDetail(context),
       child: Container(
         height: 180,
         width: 180,
@@ -199,6 +199,14 @@ class Stockcard extends StatelessWidget {
       ),
     );
   }
+  void _navigateToStockDetail(BuildContext context) {
+    context.go('/stock/$symbol', extra: {
+      'name': name,
+      'price': price,
+      'change': change,
+      'changePercentage': (change / price) * 100,
+    });
+  }
 }
 
 class TrendingStockItem extends StatelessWidget {
@@ -238,7 +246,7 @@ class TrendingStockItem extends StatelessWidget {
               style: TextStyle(color: change > 0 ? Colors.green : Colors.red)),
         ],
       ),
-      
+     // onTap: () => context.go('/stock/:symbol'),
     );
   }
 }

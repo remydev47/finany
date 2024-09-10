@@ -3,7 +3,7 @@ import 'package:finany/src/onboarding/views/onboarding_page.dart';
 import 'package:finany/src/reports/views/reportspage.dart';
 import 'package:finany/src/reports/widgets/report_widget.dart';
 import 'package:finany/src/splashscreen/views/splashscreen.dart';
-import 'package:finany/src/stocks/pages/apple_details.dart';
+import 'package:finany/src/stocks/pages/stock_details.dart';
 import 'package:finany/src/stocks/pages/stck_invest.dart';
 import 'package:finany/src/stocks/views/stockpage.dart';
 import 'package:flutter/material.dart';
@@ -28,8 +28,18 @@ final GoRouter _router = GoRouter(
       builder: (context, state) => StockInvest(),
     ),
     GoRoute(
-      path: '/apple-details',
-      builder: (context, state) => const AppleDetails(),
+      path: '/stock/:symbol',
+      builder: (context, state) {
+        final symbol = state.pathParameters['symbol']!;
+        final extra = state.extra as Map<String, dynamic>;
+        return StockDetailsPage(
+          symbol: symbol,
+          name: extra['name'] as String,
+          price: extra['price'] as double,
+          change: extra['change'] as double,
+          changePercentage: extra['changePercentage'] as double,
+        );
+      },
     ),
     GoRoute(
       path: '/stockpage',

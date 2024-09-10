@@ -54,9 +54,16 @@ class R {
       static const String ASSETS_IMAGES_I2_PNG = 'assets/images/i2.png';
       static const String ASSETS_IMAGES_I1_PNG = 'assets/images/i1.png';
   
-  static const String ASSETS_IMAGES_BENTO1_PNG =
+     static const String ASSETS_IMAGES_BENTO1_PNG =
       'assets/images/onboarding-img.png';
 
+  //static const String ASSETS_USER1_PNG = 'assets/images/user1.png';
+  static const String ASSETS_USER2_PNG = 'assets/images/user_2.jpg';
+  static const String ASSETS_USER3_PNG = 'assets/images/user_3.jpg';
+  static const String ASSETS_USER4_PNG = 'assets/images/user_4.jpg';
+    static const String ASSETS_USER5_PNG = 'assets/images/user_5.jpg';
+  static const String ASSETS_USER6_PNG = 'assets/images/user6.jpg';
+ 
   static const String ASSETS_IMAGES_S1_PNG = 'assets/images/S1.png';
   static const String ASSETS_IMAGES_S2_PNG = 'assets/images/s2.png';
   static const String ASSETS_IMAGES_S3_PNG = 'assets/images/s3.png';

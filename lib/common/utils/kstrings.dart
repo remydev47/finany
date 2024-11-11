@@ -11,5 +11,4 @@ class AppText {
       "Open a free account in minutes and get control of your money";
   static const String kGetStarted =
       "Get started";
-  
 }

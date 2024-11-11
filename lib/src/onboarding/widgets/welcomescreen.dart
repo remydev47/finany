@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
-
 import '../../../common/utils/kcolors.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -86,13 +85,14 @@ class WelcomeScreen extends StatelessWidget {
                     text: 'Already have an Account ?',
                     style: appStyle(12, Kolors.kDark, FontWeight.normal)),
                 TextButton(
-                    onPressed: () {
-                      context.go('/login');
-                    },
-                    child: Text(
-                      'Sign In',
-                      style: appStyle(12, Kolors.kPrimary, FontWeight.normal),
-                    ))
+                  onPressed: () {
+                    context.go('/login');
+                  },
+                  child: Text(
+                    'Sign In',
+                    style: appStyle(12, Kolors.kPrimary, FontWeight.normal),
+                  ),
+                )
               ],
             )
           ],

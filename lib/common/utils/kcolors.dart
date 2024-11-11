@@ -20,5 +20,5 @@ class AppColors {
      static const Color contentColorPurple = Color(0xFF6E1BFF);
      static const Color contentColorBlue = Color(0xFF2196F3);
      static const Color mainTextColor1 = Colors.white;
-  static const Color mainTextColor2 = Colors.white70;
+  static const Color mainTextColorx2 = Colors.white70;
 }
